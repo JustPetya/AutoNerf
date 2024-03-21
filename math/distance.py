@@ -1,18 +1,21 @@
-import random
+#berechnung wenn die kameras parralel sind, nicht general stereo cameras
 
-# fete werte
+# feste werte
 brennweite = 25
-breite = 24
+breite = 5
 
 # positinen von timo
-rechter_pointer_x = -12
-rechter_pointer_y = 5
+x1 = 5
+x2 = 4
 
-linker_pointer_x = 12
-linker_pointer_y = 6
+y1 = 10
+y2 = 10
 
 
-höhe = (brennweite * breite) / ((rechter_pointer_x - linker_pointer_x) * (rechter_pointer_y - linker_pointer_y))
+pos1 = x1 * y1 #rechter pointer
+pos2 = x2 * y2 #linker pointer
+
+höhe = (brennweite * breite) / pos1 - pos2
 
 print("Höhe:", höhe)
 
