@@ -2,7 +2,7 @@ class Distance:
     @staticmethod
 
 
-    def berechne_hoehe(brennweite, breite, x1, x2, y1, y2):
+    def berechne_tiefe(brennweite, breite, x1, x2, y1, y2):
         pos1 = x1 * y1  # rechter Pointer
         pos2 = x2 * y2  # linker Pointer
         hoehe = (brennweite * breite) / (pos1 - pos2)
@@ -19,7 +19,7 @@ def start():
     y1 = 10
     y2 = 10
 
-    hoehe = Distance.berechne_hoehe(brennweite, breite, x1, x2, y1, y2)
+    hoehe = Distance.berechne_tiefe(brennweite, breite, x1, x2, y1, y2)
 
     print("Höhe:", hoehe)
     print("Hallo")
