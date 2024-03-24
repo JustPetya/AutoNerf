@@ -3,19 +3,21 @@ import cv2
 from time import sleep
 # from detection.position import get_pos
 from detection.object import get_see_obj
+# from math.distance import dist
 
 
 def main():
-    while True:
-        try:
-            get_see_obj(0, 1)
-            if get_see_obj:
-                print("Face detected: x=" + "x_cord" + " y=" + "y_cord")
-            else:
-                print("No humans in frame!")
-        except KeyboardInterrupt:
-            print("\nShutting down with code \"0\"...")
-            exit(0)
+    # while True:
+    try:
+        get_see_obj(0)
+        if get_see_obj:
+            print("Face detected: x=" + "x_cord" + " y=" + "y_cord")
+            # dist(1, 1, 1, 1)
+        else:
+            print("No humans in frame detected!")
+    except KeyboardInterrupt:
+        print("\nShutting down with code \"0\"...")
+        exit(0)
 
     # x = get_pos().split(",")
     # print(x)
