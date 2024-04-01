@@ -3,10 +3,12 @@ import cv2
 from time import sleep
 # from detection.position import get_pos
 from detection.object import get_see_obj
-# from math.distance import dist
+from math.distance import berechne_tiefe
 
 
 def main():
+
+    print(berechne_tiefe(10,21))
     # while True:
     try:
         get_see_obj(0)
