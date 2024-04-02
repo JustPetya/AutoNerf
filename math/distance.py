@@ -1,10 +1,12 @@
 # Feste Werte
 __BRENNWEITE__ = 2.1
 __BREITE_ZWISCHEN_KAMERA__ = 12
-__pixeldichte__
+__bildbreite_in_CM__ = 
+__horizontale_pixel__ =
+__pixeldichte__ = __horizontale_pixel__ * 2.54 / bildbreite_in_CM
 
 
-def berechne_tiefe(x1, x2, horizontale_pixel,bildbreite_in_CM):
-    __pixeldichte__ = horizontale_pixel * 2.54/ bildbreite_in_CM 
+
+def berechne_tiefe(x1, x2):
     hoehe = (__BRENNWEITE__ * __BREITE_ZWISCHEN_KAMERA__) /__pixeldichte__ * (x1 - x2)
     return hoehe
