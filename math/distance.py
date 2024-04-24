@@ -1,7 +1,7 @@
 # Feste Werte
 __BRENNWEITE__ = 2.1
-__BREITE_ZWISCHEN_KAMERA__ = 12
-__bildbreite_in_CM__ = 17
+__BREITE_ZWISCHEN_KAMERA__ = 12 #muss timo noch sagen
+__bildbreite_in_CM__ = 17 #muss timo mir sagen
 __horizontale_pixel__ =  720 #max res 1280* 720
 __pixeldichte__ = __horizontale_pixel__ * 2.54 / __bildbreite_in_CM__
 
