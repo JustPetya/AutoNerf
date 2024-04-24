@@ -1,0 +1,14 @@
+# Feste Werte
+__BRENNWEITE__ = 2.1
+__BREITE_ZWISCHEN_KAMERA__ = 12 #muss timo noch sagen
+__bildbreite_in_CM__ = 17 #muss timo mir sagen
+__horizontale_pixel__ =  720 #max res 1280* 720
+__pixeldichte__ = __horizontale_pixel__ * 2.54 / __bildbreite_in_CM__
+
+def berechne_tiefe(x1, x2):
+    hoehe = (__BRENNWEITE__ * __BREITE_ZWISCHEN_KAMERA__) /__pixeldichte__ * (x1 - x2)
+    print(hoehe)
+    return hoehe
+
+if __name__ == '__main__':
+    berechne_tiefe(13,-24) #ein wert muss immer positiv sein einer negantiv sieht paint zeichnung
