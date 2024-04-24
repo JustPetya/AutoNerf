@@ -2,7 +2,7 @@
 __BRENNWEITE__ = 2.1
 __BREITE_ZWISCHEN_KAMERA__ = 12
 __bildbreite_in_CM__ = 
-__horizontale_pixel__ =
+__horizontale_pixel__ =  720 #max res 1280* 720
 __pixeldichte__ = __horizontale_pixel__ * 2.54 / bildbreite_in_CM
 
 
