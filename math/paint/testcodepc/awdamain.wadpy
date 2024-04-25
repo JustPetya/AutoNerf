@@ -1,19 +1,55 @@
-# Feste Werte
+import random
+
 __BRENNWEITE__ = 2.1
 __BREITE_ZWISCHEN_KAMERA__ = 6 #muss timo noch sagen
 __bildbreite_in_CM__ = 45.2 #muss timo mir sagen # 45,2 wäre wenn 1280*720pixel & 72 dpi
-__horizontale_pixel__ =  720 #max res 1280* 720
+__horizontale_pixel__ = 720 #max res 1280* 720
 __pixeldichte__ = __horizontale_pixel__ * 2.54 / __bildbreite_in_CM__
 __physicalsizesensorreal__ = 0.635
 
-def berechne_tiefe(x1, x2):
-    hoehe = (__BRENNWEITE__ * __BREITE_ZWISCHEN_KAMERA__) / __physicalsizesensorreal__ * (x1 - x2)
-    print("cm") # inc m
-    print(hoehe) # inc m
-    print("m") # inc m
-    print(hoehe / 100) # in m
+
+def generate_random_numbers(): # chat gpt arbeit - da nur um code zu testen da timo nicht ferig
+    # Liste für die Zufallszahlen
+    random_numbers = []
+
+    # Vier Zufallszahlen im Bereich von 0 bis 179 erstellen
+    for _ in range(4):
+        random_numbers.append(random.randint(0, 179))
+
+    return random_numbers
+
+
+def convert_to_strings(numbers): # chat gpt arbeit - da nur um code zu testen da timo nicht ferig
+    # Liste für die umgewandelten Strings
+    string_numbers = []
+
+    # Zahlen in Strings umwandeln
+    for number in numbers:
+        string_numbers.append(str(number))
+
+    return string_numbers
+
+
+def berechne_tiefe(xr, xl):
+    if xr < xl:  # wenn xr < xl dann tauschen, so entstehen keine minus zahlen
+        xr, xl = xl, xr
+    hoehe = (__BRENNWEITE__ * __BREITE_ZWISCHEN_KAMERA__) / __physicalsizesensorreal__ * (xr - xl)
+    print("cm")
+    print(hoehe)  # tiefe in cm
+    print("m")
+    print(hoehe / 100)  # tiefe in meter
     return hoehe
 
 
 if __name__ == '__main__':
-    berechne_tiefe(13,-24) #ein wert muss immer positiv sein einer negantiv sieht paint zeichnung
+    # Zufallszahlen generieren
+    random_numbers = generate_random_numbers()
+
+    # Zahlen in Strings umwandeln
+    string_numbers = convert_to_strings(random_numbers)
+
+    print("Zufallszahlen:", random_numbers)
+    print("Zahlen als Strings:", string_numbers)
+
+    # Berechnung der Tiefe
+    tiefe = berechne_tiefe(random_numbers[0], random_numbers[1])
