@@ -8,7 +8,7 @@ __pixeldichte__ = __horizontale_pixel__ * 2.54 / __bildbreite_in_CM__
 __physicalsizesensorreal__ = 0.635
 
 
-def generate_random_numbers(): # chat gpt arbeit - da nur um code zu testen da timo nicht ferig
+def generate_random_numbers(): #da nur um code zu testen da timo nicht ferig
     # Liste für die Zufallszahlen
     random_numbers = []
 
@@ -19,7 +19,7 @@ def generate_random_numbers(): # chat gpt arbeit - da nur um code zu testen da t
     return random_numbers
 
 
-def convert_to_strings(numbers): # chat gpt arbeit - da nur um code zu testen da timo nicht ferig
+def convert_to_strings(numbers): # da nur um code zu testen da timo nicht ferig
     # Liste für die umgewandelten Strings
     string_numbers = []
 
