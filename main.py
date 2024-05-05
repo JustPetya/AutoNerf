@@ -3,11 +3,11 @@ import cv2
 # from time import sleep
 # from detection.position import get_pos
 from detection.object import get_see_obj
-from mapping.distance import berechne_tiefe
+from mapping.distance import stereo_cam_depth
 
 
 def main():
-    print(berechne_tiefe(10, 21))
+    print(stereo_cam_depth(0, 10))
     # while True:
     try:
         get_see_obj(0)
