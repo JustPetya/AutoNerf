@@ -29,6 +29,7 @@ def target_angels_turret(xr, xl, y):
                                        - (2 * __breite_zwischen_kameras__ * floor_depth
                                        * math.cos(cam_to_turret_angel)))
         turret_to_cam_angel = math.asin((math.sin(cam_to_turret_angel) * floor_depth) / floor_turret_depth)
+
     pan = None
     tilt = None
     return pan, tilt
