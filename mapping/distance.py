@@ -1,5 +1,5 @@
 __BRENNWEITE__ = 2.1 #EFL wert laut datenblatt, ist der einzige wert mit mm(wie Brennweite angeben wird)
-__BREITE_ZWISCHEN_KAMERA__ = 6 #muss timo noch sagen
+__BREITE_ZWISCHEN_KAMERA__ = 8 #muss timo noch sagen
 __bildbreite_in_CM__ = 45.2 #muss timo mir sagen # 45,2 wäre wenn 1280*720pixel & 72 dpi
 __horizontale_pixel__ = 720 #max res 1280* 720
 __pixeldichte__ = __horizontale_pixel__ * 2.54 / __bildbreite_in_CM__
