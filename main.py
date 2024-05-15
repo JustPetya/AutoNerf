@@ -1,31 +1,20 @@
 import os
 import cv2
-# from time import sleep
-# from detection.position import get_pos
-from detection.object import get_see_obj
+from time import sleep
+from detection.object import position
 # from mapping.distance import stereo_cam_depth
 
 
 def main():
-    # print(stereo_cam_depth(0, 10))
-    # while True:
-    try:
-        if get_see_obj(0):
-            print("Face detected: x=" + "x_cord" + " y=" + "y_cord")
-            # dist(1, 1, 1, 1)
-        else:
-            print("No humans in frame detected!")
-    except KeyboardInterrupt:
-        print("\nShutting down with code \"0\"...")
-        exit(0)
+    print(position(0, 2))
 
-    # x = get_pos().split(",")
-    # print(x)
+    # cords = position(0, 2)
+    # stereo_cam_depth(cords[0], cords[2])
 
 
 if __name__ == "__main__":
     print(cv2.__version__)
-    # sleep(5)
+    sleep(2.5)
     if os.name in ("nt", "dos"):
         os.system("cls")
     else:
