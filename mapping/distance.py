@@ -14,14 +14,15 @@ def stereo_cam_depth(xr, xl):
     hoehe = (brennweite * raum_zwischen_kameras) / physicalsizesensorreal * (xl - xr)
     print(hoehe, " cm\n", (hoehe / 100), " m")
     return hoehe
-
+def map(x, in_min, in_max, out_min, out_max): 
+    return (
+        x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+    
 
 def target_angels_turret(xr, xl, y):
 
-    def deg_to_rad(x): return math.pi/180 * x
-
-    def map(x, in_min, in_max, out_min, out_max): return (
-        x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+    deg_to_rad = lambda x : math.pi/180 * x
+    
     depth = stereo_cam_depth(xr, xl)
 
     angle_y = map(y, 0, 360, 80, 0)
