@@ -21,7 +21,11 @@ def map(x, in_min, in_max, out_min, out_max):
     
 
 def target_angels_turret(xr, xl, y):
-
+    if(xr > xl):
+        xr = xr + xl 
+        xl = xr - xl 
+        xr = xr - xl 
+    
     deg_to_rad = lambda x : math.pi/180 * x
     rad_to_deg = lambda x : 180/math.pi * x
 
