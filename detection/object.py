@@ -85,7 +85,9 @@ class CVDetect(QRunnable):
                 self.newCoord = True
                 continue
             else:
-                print("no face in frame")
+               # print("no face in frame")
+                self.newCoord = False
+            time.sleep(0.5)
 
 
     def position(self):
