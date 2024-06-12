@@ -27,7 +27,7 @@ def main():
                 left_xy[0], right_xy[0], (left_xy[1]+right_xy[1])/2)
             handler.setold()
 
-            print(pan, tilt)
+            print("Pan:",pan," Tilt: ", tilt,"\n\n")
 
             if pan and tilt:
                 list = [1, pan, tilt]
