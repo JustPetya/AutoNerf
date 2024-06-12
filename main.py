@@ -21,6 +21,7 @@ def main():
 
         left_new, right_new = handler.newposition()
         print(left_xy, right_xy)
+
         if left_new and right_new:
             pan, tilt = distance.target_angels_turret(
                 left_xy[0], right_xy[0], (left_xy[1]+right_xy[1])/2)

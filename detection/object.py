@@ -69,7 +69,7 @@ class CVDetect(QRunnable):
         faces = cascade[0].detectMultiScale(
             gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
-        return faces
+        return faces 
 
     @Slot()
     def run(self):
@@ -87,8 +87,6 @@ class CVDetect(QRunnable):
             else:
                 print("no face in frame")
 
-            self.newCoord= False
-            time.sleep(1)
 
     def position(self):
         return self.coordinates
