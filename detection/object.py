@@ -23,6 +23,7 @@ class CVDetect(QRunnable):
         super().__init__()
         self.coordinates = []  # empty list on every call
         self.cam = cam
+        self.newCoord = False
 
     @staticmethod
     def record(cam_input: int):
@@ -81,8 +82,16 @@ class CVDetect(QRunnable):
             if np.any(face):
                 x, y, w, h = face[0]
                 self.coordinates = x, y
+                self.newCoord = True
+                continue
             else:
                 print("no face in frame")
 
+            self.newCoord= False
+            time.sleep(1)
+
     def position(self):
         return self.coordinates
+    
+    def newData(self):
+        return self.newCoord

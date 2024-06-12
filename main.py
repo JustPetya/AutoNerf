@@ -15,12 +15,17 @@ from mapping import distance
 def main():
 
     handler = Handler()
+    pan, tilt = None, None
     while True:
         left_xy, right_xy = handler.lastposition()
+
+        left_new, right_new = handler.newposition()
         print(left_xy, right_xy)
-        if left_xy and right_xy:
+        if left_new and right_new:
             pan, tilt = distance.target_angels_turret(
                 left_xy[0], right_xy[0], (left_xy[1]+right_xy[1])/2)
+            handler.setold()
+
             print(pan, tilt)
 
             if pan and tilt:
@@ -83,8 +88,15 @@ class Handler():
     def slotRes(self, res):
         self.console.appendPlainText(res)
 
+    def setold(self):
+        self.workerCVDetect_L.newCoord = False
+        self.workerCVDetect_R.newCoord = False
+
     def lastposition(self):
         return self.workerCVDetect_L.position(), self.workerCVDetect_R.position()
+
+    def newposition(self):
+        return self.workerCVDetect_L.newData(), self.workerCVDetect_R.newData()
 
 
 class WorkerSignals(QObject):
